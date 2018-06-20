@@ -32,7 +32,7 @@ public class TodoList extends HttpServlet {
 	private TodoService todoService = new TodoService();
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println(request.getSession().getAttribute("name"));
+		System.out.println(request.getSession().getAttribute("name"));
 		int user_id=(int) request.getSession().getAttribute("user_id");
 		LOG.info("Hello, user");
 		try

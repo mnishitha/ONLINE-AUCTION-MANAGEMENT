@@ -3,8 +3,8 @@
     <Resource
         name="jdbc/demo1" type="javax.sql.DataSource"
         maxActive="100" maxIdle="30" maxWait="10000" 
-        url="jdbc:mysql://localhost/demo1?autoReconnect=true&amp;allowMultiQueries=false"
+        url="jdbc:mysql://localhost/todo?autoReconnect=true&amp;allowMultiQueries=false"
         driverClassName="com.mysql.jdbc.Driver"
-        username="root" password="17121981"
+        username="root" password="devs"
     />
 </Context>

@@ -41,7 +41,6 @@ public class SearchTodoServlet extends HttpServlet {
   	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   		int user_id=(int) request.getSession().getAttribute("user_id");
 		String keyword=request.getParameter("keyword");
-		System.out.println(keyword);
 		try
 		{
 			conn = ds.getConnection();
@@ -50,7 +49,7 @@ public class SearchTodoServlet extends HttpServlet {
 			request.setAttribute("searchSize", searchList.size());
 			request.setAttribute("todos1", searchList);
 			
-			response.setHeader("X-XSS-Protection", "1; mode=block");
+			//response.setHeader("X-XSS-Protection", "1; mode=block");
 			
 			request.getRequestDispatcher("view/todoSearch.jsp").forward(request, response);
 			
@@ -74,5 +73,8 @@ public class SearchTodoServlet extends HttpServlet {
   			
   		}
     
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//doGet(request, response);
+	}
 
 }

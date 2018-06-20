@@ -23,7 +23,7 @@ import com.app.user.UserAccountService;
 /**
  * Servlet implementation class AccountUpdateServlet
  */
-@WebServlet(urlPatterns="/account-update.do", initParams={@WebInitParam(name="basePath", value="/")})
+@WebServlet(urlPatterns="/account-update.do", initParams={@WebInitParam(name="basePath", value="/Users/SrikanthReddy")})
 public class AccountUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static final Logger LOG = LoggerFactory.getLogger(AccountUpdateServlet.class);
@@ -65,6 +65,7 @@ public class AccountUpdateServlet extends HttpServlet {
 				conn.close();
 				LOG.trace("doGet : DBConnection Close");
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				LOG.error("doGet : Finally block : SQLException : "+e.getMessage());
 				e.printStackTrace();
 			}
@@ -72,6 +73,9 @@ public class AccountUpdateServlet extends HttpServlet {
 		
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String fullname = request.getParameter("fullname");
 		String email = request.getParameter("email");
@@ -82,61 +86,55 @@ public class AccountUpdateServlet extends HttpServlet {
         String token = request.getParameter("token");
         //do check
         if (storedToken.equals(token)) {
-        	
-		        	try
-		    		{
-		        		LOG.trace("doPost : DBConnection Open");
-		    			conn = ds.getConnection();
-		    			User user=new User();
-		    			user.setUser_id(user_id);
-		    			user.setFullname(fullname);
-		    			user.setEmail(email);
-		    			LOG.info("doPost : Update user data");
-		    			int update=userAccountService.updateUser(user,conn);
-		    			if(update==1)
-		    			{
-		    				LOG.info("doPost : Update done sucessfully");
-		    				request.setAttribute("success", "Updated");
-		    				LOG.info("doPost : Redirect from AccountUpdateServlet to AccountUpdateServlet");
-		    				response.sendRedirect("account-update.do");
-		    			}
-		    			else
-		    			{
-		    				LOG.info("doPost : Update failed");
-		    				request.setAttribute("error", "Update failed");
-		    				LOG.info("doPost : Redirect from AccountUpdateServlet to AccountUpdateServlet");
-		    				response.sendRedirect("account-update.do");
-		    				
-		    			}
-		    			
-		    			
-		    		}
-		    		catch(SQLException e)
-		    		{
-		    			LOG.error("doPost : Catch block : SQLException : "+e.getMessage());
-		    			log(e.getMessage(), e);
-		    		}
-		    		finally
-		    		{
-		    			try {
-		    				conn.close();
-		    				LOG.trace("doPost : DBConnection Close");
-		    			} catch (SQLException e) {
-		    				LOG.error("doPost : Finally block : SQLException : "+e.getMessage());
-		    				e.printStackTrace();
-		    			}
-		    		}
+
+        	try
+    		{
+        		LOG.trace("doPost : DBConnection Open");
+    			conn = ds.getConnection();
+    			User user=new User();
+    			user.setUser_id(user_id);
+    			user.setFullname(fullname);
+    			user.setEmail(email);
+    			LOG.info("doPost : Update user data");
+    			int update=userAccountService.updateUser(user,conn);
+    			if(update==1)
+    			{
+    				LOG.info("doPost : Update done sucessfully");
+    				request.setAttribute("success", "Updated");
+    				LOG.info("doPost : Redirect from AccountUpdateServlet to AccountUpdateServlet");
+    				response.sendRedirect("account-update.do");
+    			}
+    			else
+    			{
+    				LOG.info("doPost : Update failed");
+    				request.setAttribute("error", "Update failed");
+    				LOG.info("doPost : Redirect from AccountUpdateServlet to AccountUpdateServlet");
+    				response.sendRedirect("account-update.do");
+    				
+    			}
+    			
+    			
+    		}
+    		catch(SQLException e)
+    		{
+    			LOG.error("doPost : Catch block : SQLException : "+e.getMessage());
+    			log(e.getMessage(), e);
+    		}
+    		finally
+    		{
+    			try {
+    				conn.close();
+    				LOG.trace("doPost : DBConnection Close");
+    			} catch (SQLException e) {
+    				// TODO Auto-generated catch block
+    				LOG.error("doPost : Finally block : SQLException : "+e.getMessage());
+    				e.printStackTrace();
+    			}
+    		}
         	
         } else {
-           	
+               	
         }
-
-        
-        
-        
-        
-        	
-       
 		
 		
 		

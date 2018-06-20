@@ -1,0 +1,40 @@
+07:31:19.251 [http-nio-8443-exec-4] INFO  com.app.login.LoginServlet[LoginServlet.java:39] Anonymous - doGet : Request from LoginServlet to login.jsp
+07:31:39.853 [http-nio-8443-exec-9] INFO  com.app.login.LoginServlet[LoginServlet.java:49] Anonymous - doPost : Request from login.jsp to validate login
+07:31:39.855 [http-nio-8443-exec-9] TRACE com.app.login.LoginServlet[LoginServlet.java:50] Anonymous - Requested User : bob
+07:31:40.349 [http-nio-8443-exec-9] INFO  com.app.login.LoginServlet[LoginServlet.java:58] Anonymous - User validated sucessfully
+07:31:40.350 [http-nio-8443-exec-9] INFO  com.app.login.LoginServlet[LoginServlet.java:66] Anonymous - Hello, user
+07:31:40.352 [http-nio-8443-exec-9] INFO  com.app.login.LoginServlet[LoginServlet.java:67] Anonymous - doPost : Redirect from LoginServlet to TodoServlet
+07:40:30.533 [http-nio-8443-exec-4] INFO  com.app.login.LoginServlet[LoginServlet.java:39] bob - doGet : Request from LoginServlet to login.jsp
+07:40:35.619 [http-nio-8443-exec-9] INFO  com.app.login.LoginServlet[LoginServlet.java:39] bob - doGet : Request from LoginServlet to login.jsp
+07:41:08.634 [http-nio-8443-exec-4] INFO  com.app.login.LoginServlet[LoginServlet.java:39] bob - doGet : Request from LoginServlet to login.jsp
+07:41:20.206 [http-nio-8443-exec-1] INFO  com.app.login.LoginServlet[LoginServlet.java:49] bob - doPost : Request from login.jsp to validate login
+07:41:20.206 [http-nio-8443-exec-1] TRACE com.app.login.LoginServlet[LoginServlet.java:50] bob - Requested User : bob
+07:41:20.667 [http-nio-8443-exec-1] INFO  com.app.login.LoginServlet[LoginServlet.java:58] bob - User validated sucessfully
+07:41:20.669 [http-nio-8443-exec-1] INFO  com.app.login.LoginServlet[LoginServlet.java:66] bob - doPost : Redirect from LoginServlet to TodoServlet
+07:41:20.679 [http-nio-8443-exec-2] INFO  com.app.todo.TodoList[TodoList.java:37] bob - Hello, user
+07:41:20.680 [http-nio-8443-exec-2] TRACE com.app.todo.TodoList[TodoList.java:40] bob - doGet : DBConnection Open
+07:41:20.691 [http-nio-8443-exec-2] INFO  com.app.todo.TodoList[TodoList.java:42] bob - doGet : Retrive todo list
+07:41:20.697 [http-nio-8443-exec-2] INFO  com.app.todo.TodoList[TodoList.java:44] bob - doGet : Request from TodoServlet to todoList.jsp
+07:41:20.748 [http-nio-8443-exec-2] TRACE com.app.todo.TodoList[TodoList.java:57] bob - doGet : DBConnection Close
+07:46:51.747 [http-nio-8443-exec-4] INFO  com.app.login.LoginServlet[LoginServlet.java:39] bob - doGet : Request from LoginServlet to login.jsp
+07:47:06.964 [http-nio-8443-exec-6] INFO  com.app.login.LoginServlet[LoginServlet.java:49] bob - doPost : Request from login.jsp to validate login
+07:47:06.965 [http-nio-8443-exec-6] TRACE com.app.login.LoginServlet[LoginServlet.java:50] bob - Requested User : bob
+07:47:07.418 [http-nio-8443-exec-6] INFO  com.app.login.LoginServlet[LoginServlet.java:58] bob - User validated sucessfully
+07:47:07.419 [http-nio-8443-exec-6] INFO  com.app.login.LoginServlet[LoginServlet.java:66] bob - doPost : Redirect from LoginServlet to TodoServlet
+07:47:07.429 [http-nio-8443-exec-10] INFO  com.app.todo.TodoList[TodoList.java:37] bob - Hello, user
+07:47:07.430 [http-nio-8443-exec-10] TRACE com.app.todo.TodoList[TodoList.java:40] bob - doGet : DBConnection Open
+07:47:07.443 [http-nio-8443-exec-10] INFO  com.app.todo.TodoList[TodoList.java:42] bob - doGet : Retrive todo list
+07:47:07.447 [http-nio-8443-exec-10] INFO  com.app.todo.TodoList[TodoList.java:44] bob - doGet : Request from TodoServlet to todoList.jsp
+07:47:07.494 [http-nio-8443-exec-10] TRACE com.app.todo.TodoList[TodoList.java:57] bob - doGet : DBConnection Close
+07:48:23.446 [http-nio-8443-exec-4] INFO  com.app.login.LoginServlet[LoginServlet.java:39] bob - doGet : Request from LoginServlet to login.jsp
+07:50:02.761 [http-nio-8443-exec-4] INFO  com.app.login.LoginServlet[LoginServlet.java:39] bob - doGet : Request from LoginServlet to login.jsp
+07:50:39.227 [http-nio-8443-exec-5] INFO  com.app.todo.TodoList[TodoList.java:37] bob - Hello, user
+07:50:39.228 [http-nio-8443-exec-5] TRACE com.app.todo.TodoList[TodoList.java:40] bob - doGet : DBConnection Open
+07:50:39.732 [http-nio-8443-exec-5] INFO  com.app.todo.TodoList[TodoList.java:42] bob - doGet : Retrive todo list
+07:50:39.740 [http-nio-8443-exec-5] INFO  com.app.todo.TodoList[TodoList.java:44] bob - doGet : Request from TodoServlet to todoList.jsp
+07:50:39.779 [http-nio-8443-exec-5] TRACE com.app.todo.TodoList[TodoList.java:57] bob - doGet : DBConnection Close
+07:51:04.281 [http-nio-8443-exec-8] INFO  com.app.login.LoginServlet[LoginServlet.java:39] Anonymous - doGet : Request from LoginServlet to login.jsp
+07:51:24.920 [http-nio-8443-exec-7] INFO  com.app.login.LoginServlet[LoginServlet.java:49] Anonymous - doPost : Request from login.jsp to validate login
+07:51:24.928 [http-nio-8443-exec-7] TRACE com.app.login.LoginServlet[LoginServlet.java:50] Anonymous - Requested User : test
+07:51:24.934 [http-nio-8443-exec-7] INFO  com.app.login.LoginServlet[LoginServlet.java:72] Anonymous - User validation failed
+07:51:24.934 [http-nio-8443-exec-7] INFO  com.app.login.LoginServlet[LoginServlet.java:73] Anonymous - doPost : Request from LoginServlet to login.jsp

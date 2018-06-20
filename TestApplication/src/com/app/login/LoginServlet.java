@@ -38,14 +38,16 @@ public class LoginServlet extends HttpServlet {
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LOG.info("doGet : Request from LoginServlet to login.jsp");
 	   request.getRequestDispatcher("view/login.jsp").forward(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//doGet(request, response);
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
-		LOG.info("doPost : Request from login.jsp to validate login");
-		LOG.trace("Requested User : "+name);
+		//LOG.info("doPost : Request from login.jsp to validate login");
+		//LOG.trace("Requested User : "+name);
 		try
 		{
 			conn = ds.getConnection();
@@ -53,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 			boolean isUserValid=userValidation.isUserValid(name, password,user,conn);
 			if(isUserValid)
 			{
-				LOG.info("User validated sucessfully asdasd");
+				//LOG.info("User validated sucessfully");
 
 				request.getSession().setAttribute("name", name);
 				System.out.println(user.getUser_id());
@@ -61,14 +63,14 @@ public class LoginServlet extends HttpServlet {
 				request.getSession().setAttribute("csrfToken", generateCSRFToken());
 				String sessionid = request.getSession().getId();
 				response.setHeader("Set-Cookie", "JSESSIONID=" +  sessionid + ";");
-				LOG.info("doPost : Redirect from LoginServlet to TodoServlet");
+				//LOG.info("doPost : Redirect from LoginServlet to TodoServlet");
 				response.sendRedirect("todoList.do");			
 			}
 			else
 			{
 				request.setAttribute("error", "Invalid credientials");
-				LOG.info("User validation failed");
-				LOG.info("doPost : Request from LoginServlet to login.jsp");
+				//LOG.info("User validation failed");
+				//LOG.info("doPost : Request from LoginServlet to login.jsp");
 				request.getRequestDispatcher("view/login.jsp").forward(request, response);
 
 			}

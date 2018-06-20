@@ -92,7 +92,7 @@
 			<input type="text" class="form-control" name="name" placeholder="Name" required="" autofocus="" value="${u.username}" />
 			<input type="text" class="form-control" name="fullname" placeholder="Full Name" required="" autofocus="" value="${u.fullname}" />
 			<input type="text" class="form-control" name="email" placeholder="Email ID" required="" autofocus="" value="${u.email}" />
-         	<input id="token" class="form-control" name="token" type="hidden" value="${sessionScope.csrfToken}" />
+      	<input id="token" class="form-control" name="token" type="hidden" value="${sessionScope.csrfToken}" />
       <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Update Account</button> 
 			    	
 	</form>

@@ -26,13 +26,10 @@ public class LoginRequiredFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		System.out.println("Test");
+
 		if (httpRequest.getSession().getAttribute("name") != null) {
 			chain.doFilter(request, response);
-			System.out.println("Test in if");
-
 		} else {
-			System.out.println("Test in else");
 			request.getRequestDispatcher("login.do").forward(request,response);
 		}
 

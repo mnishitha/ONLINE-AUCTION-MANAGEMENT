@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+  <encoder>
+    <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger[%file:%line] %X - %msg%n</pattern>
+  </encoder>
+</appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+  <file>/Users/SrikanthReddy/Documents/workspace/TestApplication/log/MyLog.log</file>
+  <encoder>
+    <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger[%file:%line] %X - %msg%n</Pattern>
+  </encoder>
+</appender>
+  
+  <logger name="com.app" level="TRACE"/>
+  
+
+  <root level="debug">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </root>
+</configuration>

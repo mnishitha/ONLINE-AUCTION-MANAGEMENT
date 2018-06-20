@@ -15,13 +15,10 @@ public class LoginService {
 			if (conn != null && !conn.isClosed()) {
 				ResultSet rs = null;
 
-				//Statement stmt = conn.createStatement();
-				String sql = "select * from login where username= ? and password= ?";
-				PreparedStatement pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, name);
-				pstmt.setString(2, password);
-				System.out.println(pstmt);
-				rs = pstmt.executeQuery();
+				Statement stmt = conn.createStatement();
+				String sql = "select * from login where username='" + name + "' and password='" + password + "'";
+				System.out.println(sql);
+				rs = stmt.executeQuery(sql);
 
 				if (rs != null && rs.next()) {
 					user.setUser_id(rs.getInt("user_id"));

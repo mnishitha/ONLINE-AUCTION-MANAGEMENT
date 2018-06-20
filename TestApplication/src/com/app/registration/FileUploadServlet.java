@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Servlet implementation class FileUploadServlet
  */
-@WebServlet(urlPatterns="/upload.do", initParams={@WebInitParam(name="basePath", value="/")})
+@WebServlet(urlPatterns="/upload.do", initParams={@WebInitParam(name="basePath", value="/Users/SrikanthReddy")})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
 				 maxFileSize = 1024 * 1024 * 10, // 10MB
 				 maxRequestSize = 1024 * 1024 * 50) // 50MB
@@ -44,7 +44,7 @@ public class FileUploadServlet extends HttpServlet {
 			String fileName=name+"_"+fileID;
 			Part filePart = request.getPart("input-file-preview");
 			String str = filePart.getContentType();
-			//LOG.info("doPost : File content type : "+str);
+			LOG.info("doPost : File content type : "+str);
 
 			
 			// gets absolute path of the web application
